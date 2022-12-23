@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepawali SEO-Website Keywords Density</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@700&family=Poppins&display=swap');
+    
+    *{
+        font-family: 'Poppins', sans-serif;
+    }
+    .accordion-item{
+        box-shadow: 0 1px 11px 0 rgb(181, 181, 181);
+        margin-bottom: 8px;
+        padding: 5px;
+    }
+    .main-wrapper{
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: 0 1px 11px 0 rgb(181, 181, 181);
+        overflow: auto;
+    }
+    .container{
+        margin-top: 20px !important ;
+        width: min-content;
+    }
+    .main-wrapper input {
+        border: none !important;
+        overflow: auto !important;
+        outline: none;
+        padding: 14px !important;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+
+    }
+    .btn-primary{
+        background-color: #3b8ffc;
+        border: 1px solid #3b8ffc;
+    }
+    .btn-primary:hover{
+        background-color: #4294ff;
+        border: 1px solid #4294ff;
+    }
+    
+    
+
+    .links{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .links a{
+        text-decoration: underline;
+        color: black;
+        margin-right: 16px;
+        font-size: 11px;
+    }
+
+    @media (max-width:700px){
+        .links {
+            display: none;
+        }
+        body{
+            margin-top: 9px;
+        }
+    }
+
+    .navbar-links {
+        height: 80%;
+        margin-left: 20vw;
+        width: min-content;
+    }
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    white-space: nowrap;
+    display: inline;
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+}
+
+
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links li:hover {
+    background-color: rgb(207, 206, 206);
+}
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+.td-tagline-text{
+    letter-spacing: 1.8px;
+    font-size: 12px;
+    font-family: serif;
+    color: #777;
+    padding-top: 2px;
+    padding-bottom: 10px;
+    margin-top: 1px !important;
+}
+    .menu-tab,.counter-tab{
+        margin-top: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .menu-tab button{
+        margin-right: 7px;
+        margin-bottom: 40px;
+    }
+    .accordion{
+        margin-bottom: 200px;
+    }
+    .unregistered-span{
+        padding: 3px;
+        border: 1px red solid;
+        color: white;
+        background-color: red;
+        border-radius: 4px
+    }
+    .registered-span{
+        padding: 3px;
+        border: 1px green solid;
+        color: white;
+        background-color: green;
+        border-radius: 4px
+    }
+    .horizontal{
+        display: flex;
+        flex-direction: row;
+        width: 30%;
+        justify-content: space-between;
+    }
+    #select-inp{
+        display: none;
+    }
+
+
+
+</style>
+<body>
+    <div class="header-div">
+        <div class="links">     
+            <p><a href="https://www.deepawaliseotips.com/about-us/">About us</a></p>
+            <p><a href="https://www.deepawaliseotips.com/digital-marketing-and-seo-consultancy-services-pavan-agrawal/">SEO Consultancy Services</a></p>
+            <p><a href="https://www.deepawaliseotips.com/privacy-policy/">Privacy Policy</a></p>
+            <p><a href="https://www.deepawaliseotips.com/disclaimer/">Disclaimer</a></p>
+            <p><a href="https://www.deepawaliseotips.com/terms-conditions/">Terms & Conditions</a></p>
+            <p><a href="https://www.deepawaliseotips.com/contact-us/">Contact Us</a></p>
+        </div>
+        <div class="title">
+            <center>
+                <h1 style="font-family: serif;font-size: 5vw;">SEO Pavan Agrawal</h1>
+                <span class="td-tagline-text">Remember Observe and React</span>
+            </center>
+            <hr>
+            
+        </div>
+        <nav class="navbar">
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            
+
+            <div class="navbar-links">
+                <ul>
+                    <li>
+                        <a href="https://www.deepawaliseotips.com/">HOME</a>
+                    </li>
+                    <li>
+                        <a href="https://www.deepawaliseotips.com/category/start-a-blog/">START A BLOG</a>
+                    </li>
+                    <li>
+                        <a href="https://www.deepawaliseotips.com/category/hosting/">HOSTING</a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://www.deepawaliseotips.com/tools/">TOOLS [PAVAN AGRAWAL]</a>
+                    </li>
+                    <li>
+                        <a href="https://twittertrends.deepawaliseotips.com/">TWITTER TRENDS</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <hr>
+    <br>
+    <div class="container">
+        <div class="header-tab">
+            <h3>Website Keywords Density</h3>
+        </div>
+
+        <div class="main-wrapper">
+            <input id="url" contenteditable="true" style="width:900px;border:1px solid;overflow-y:scroll" placeholder="Enter URL"></input>    
+        </div>
+
+
+        <div class="menu-tab" id="tab">
+            <button class="btn btn-primary" type="button" id="load-btn" onclick="get_data()">Generate</button>
+        </div>
+
+        
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="select-inp" onchange="change_words(this.value)">
+            <option selected>Select Word Length</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <div class="row ">
+            <div class="col-6">
+                <table class="table table-bordered" id="tableExample1">
+                </table>
+            </div>
+        
+            <div class="col-6">
+                <table class="table table-bordered" id="tableExample2"></table>
+            </div>
+        </div>
+
+        <div class="main-wrapper" style="padding: 22px;">
+            <h3>Keyword Density: Does It Still Matter for SEO?</h3>
+            <p>
+                Keyword density is a foundational concept of search engine optimization (SEO). It’s important to understand how keyword density works, since it can have a direct impact on your site content’s visibility in search engine results pages (SERPs) and on the costs of your online marketing campaigns.
+                <br><br>However, the relative importance of keyword density in most search engine ranking algorithms, including Google’s, has changed over the years, so it’s especially key to understand how this concept will impact your SEO in the post-Panda world.
+            </p>
+            <h3>What Is Keyword Density?</h3>
+            <p>Keyword density refers to the number of times a keyword appears on a given webpage or within a piece of content as a ratio or percentage of the overall word count. This is also sometimes referred to as keyword frequency, or the frequency with which a specific keyword appears on a webpage.</p>
+            <h3>How Many Keywords Should I Use in My Content?</h3>
+            <p>As we mentioned earlier, there are no hard-and-fast rules about keyword density. To complicate matters further, keyword density can and should change depending on the nature of the content in question; a timely, syndicated news article, for example, may need significantly fewer keywords to rank highly than an older evergreen blog post.
+                <br><br>However, there are some unofficial guidelines that can help you make decisions about your keyword targeting strategy.
+                <br><br>Many SEOs recommend including one keyword per roughly 200 words of copy. In other words, if a webpage consists of a single, 200-word paragraph, it should contain no more than one keyword. You may be able to “safely” include more keywords than this (i.e. without being penalized by Google), but roughly one keyword per 200 words of copy is considered a good benchmark by the SEO community.
+            </p>
+            <h3>How to use Keyword Density Checker?</h3>
+            <p>
+                Using our free online keyword density calculator is as simple as just clicking a buttons in two simple steps:
+                <ul>
+                    <li>Go to deepawaliseotips.com and click on website keywords density tool, which is where you are right now, enter the URL of the page you want to analyze. </li>
+                    <li>Click on “Generate” to run your request.</li>        
+                </ul>
+                <br> Once you've done that, our keyword density analyzer will immediately retrieve all the keyword data from your website or piece of content and display them in a tabular format.
+                <br> And don't forget, you can use this tool to analyze not just your own web pages, but that of your competition also to get an idea of what they are doing.
+            </p>
+        </div>
+
+    </div>
+    
+</body>
+<script>
+    let flag = false;
+    let data;
+
+    const change_words = (value ) => {
+        if(value==1){
+            set_data('one')
+        }
+        else if(value==2){
+            set_data('two')
+        }
+        else if(value==3){
+            set_data('three')
+        }
+        else{
+            set_data('one')
+        }
+    }
+
+    const get_data = async ()=>{
+        const url = document.getElementById('url').value;
+        
+        document.getElementById('load-btn').disabled = true;
+        document.getElementById('load-btn').innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...'
+        await fetch("https://deepawali-api-test.up.railway.app/getKeywordsFromUrl", {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                "url":url
+            }),
+        })
+        .then(
+            response => response.json()
+        )
+        .then(response_data=>{
+            document.getElementById('select-inp').style.display = 'block'
+            document.getElementById('load-btn').disabled = false;
+            document.getElementById('load-btn').innerHTML = 'Generate'
+            data = response_data
+            set_data('one')
+        }
+        )
+
+    }
+
+    const set_data = word_len => {
+        data[word_len].sort((a,b) => b[Object.keys(b)[0]] - a[Object.keys(a)[0]] )
+        
+        var items_1 = data[word_len].map((ele,idx)=>{
+                if(idx<=(data[word_len].length)/2)
+                    return (`<tr>
+                        <td>${Object.keys(ele)[0]}</td>
+                        <td>${ele[Object.keys(ele)[0]]}</td>
+                    </tr>`)
+            }).join('')
+
+        var items_2 = data[word_len].map((ele,idx)=>{
+            if(idx>(data[word_len].length)/2)
+                return (`<tr>
+                    <td>${Object.keys(ele)[0]}</td>
+                    <td>${ele[Object.keys(ele)[0]]}</td>
+                </tr>`)
+        }).join('')
+
+        document.getElementById('tableExample1').innerHTML = `<tbody><tr><th scope="col">Keyword</th><th scope="col">Count</th></tr>${items_1}</tbody>`;
+        document.getElementById('tableExample2').innerHTML = `<tbody><tr><th scope="col">Keyword</th><th scope="col">Count</th></tr>${items_2}</tbody>`;
+    }
+
+</script>
+
+<script src="https://kit.fontawesome.com/411329c929.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
+</html>
