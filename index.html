@@ -334,6 +334,7 @@
 <script>
     let flag = false;
     let data;
+    let total_count = 0;
 
     const toggleButton = document.getElementsByClassName('toggle-button')[0]
     const navbarLinks = document.getElementsByClassName('navbar-links')[0]
@@ -357,6 +358,7 @@
     }
 
     const get_data = async ()=>{
+        total_count = 0;
         const url = document.getElementById('url').value;
         
         document.getElementById('load-btn').disabled = true;
@@ -376,6 +378,16 @@
             document.getElementById('load-btn').disabled = false;
             document.getElementById('load-btn').innerHTML = 'Generate'
             data = response_data
+    
+            for(var i of response_data['one']){
+                total_count+=i[Object.keys(i)[0]];
+            }
+            for(var i of response_data['two']){
+                total_count+=i[Object.keys(i)[0]];
+            }
+            for(var i of response_data['three']){
+                total_count+=i[Object.keys(i)[0]];
+            }
             set_data('one')
         }
         )
@@ -390,6 +402,7 @@
                     return (`<tr>
                         <td>${Object.keys(ele)[0]}</td>
                         <td>${ele[Object.keys(ele)[0]]}</td>
+                        <td>${((ele[Object.keys(ele)]/ total_count)*100).toFixed(2)}</td>
                     </tr>`)
             }).join('')
 
@@ -398,11 +411,12 @@
                 return (`<tr>
                     <td>${Object.keys(ele)[0]}</td>
                     <td>${ele[Object.keys(ele)[0]]}</td>
+                    <td>${((ele[Object.keys(ele)] / total_count)*100).toFixed(2)}</td>
                 </tr>`)
         }).join('')
 
-        document.getElementById('tableExample1').innerHTML = `<tbody><tr><th scope="col">Keyword</th><th scope="col">Count</th></tr>${items_1}</tbody>`;
-        document.getElementById('tableExample2').innerHTML = `<tbody><tr><th scope="col">Keyword</th><th scope="col">Count</th></tr>${items_2}</tbody>`;
+        document.getElementById('tableExample1').innerHTML = `<tbody><tr><th scope="col">Keyword</th><th scope="col">Count</th><th>Density</th></tr>${items_1}</tbody>`;
+        document.getElementById('tableExample2').innerHTML = `<tbody><tr><th scope="col">Keyword</th><th scope="col">Count</th><th>Density</th></tr>${items_2}</tbody>`;
     }
 
 </script>
